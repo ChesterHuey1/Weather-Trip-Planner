@@ -121,6 +121,7 @@ type DayPlan = {
   legs: Leg[]; // hotel to first visit, between visits, last visit to hotel
   totalTravelMin: number;
   unscheduled: { placeId: string; why: string }[];
+  notes: string[]; // day-level problems, such as no open restaurant for a meal
 };
 
 type Itinerary = { hotel: [lng: number, lat: number]; days: DayPlan[] };
@@ -209,7 +210,7 @@ The server authenticates with a Firebase service account. Its credentials live o
 | # | Milestone | Done when | Needs |
 |---|---|---|---|
 | 1 | Scaffold | Next.js app, dependencies, lint rules. Done. | Nothing |
-| 2 | Planning logic | Weather scoring, opening hours, meals, travel modes, and route ordering work and are tested with sample data. | Nothing |
+| 2 | Planning logic | Weather scoring, opening hours, meals, travel modes, and route ordering work and are tested with sample data. Done. | Nothing |
 | 3 | Data | 1,000+ attractions plus restaurants from 60 to 80 cities in Firestore, with hours, indoor/outdoor labels, and visit lengths. | Firebase, OpenRouter |
 | 4 | Live APIs | Real forecasts, travel times, route lines, and hotel geocoding feed the planner. | Working OpenWeatherMap key, OpenRouteService token |
 | 5 | Itinerary page | Trip form, day cards, color-coded map. | Milestones 3 and 4 |
