@@ -182,18 +182,20 @@ function planItinerary(input: {
 ## Scraping policy
 
 - Source: Wikivoyage city pages, fetched through the official MediaWiki API (`action=parse`). The content is CC BY-SA 4.0, so store the source URL and license on every place and credit Wikivoyage in the UI.
-- Parse the "See" and "Do" listings as attractions and the "Eat" listings as restaurants with Cheerio. Target 60 to 80 cities and 1,000+ attractions.
-- Run the scraper once and store the results in Firestore. The app reads only from Firestore and never scrapes at runtime.
-- Send a descriptive User-Agent with a contact address, and wait at least 1 second between requests.
+- Parse the "See" and "Do" listings as attractions and the "Eat" listings as restaurants with Cheerio. The page list is in `scripts/scrape/config.ts`: 59 pages across about 52 cities, about 1,900 attractions. Large cities use their central district pages, because Wikivoyage keeps their listings there.
+- Listings without coordinates are skipped.
+- Run the scraper once with `npx tsx scripts/scrape/build.ts`. It writes `data/places.json` and `data/destinations.json`, which are committed. A separate load step copies them into Firestore. The app reads only from Firestore and never scrapes at runtime.
+- Every response is cached in `scripts/scrape/.cache/` (gitignored), so a rerun only fetches what failed before. Responses that fail validation are not cached.
+- Send a descriptive User-Agent that links to the repo, and wait at least 1 second between requests.
 - Do not add code that evades anti-scraping protections: no rotating user agents, proxy pools, CAPTCHA solving, or headless-browser tricks.
-- Opening hours come from the listing's hours field when it parses as OpenStreetMap `opening_hours`. Otherwise, look up the place once in OpenStreetMap through the Overpass API (match by name within 200 m of its coordinates) and store its `opening_hours` tag. Follow Overpass usage limits: one query at a time, with a descriptive User-Agent. If neither source has hours, store `null`.
+- Opening hours come from the listing's hours field when it parses as OpenStreetMap `opening_hours`. Wikivoyage hours are usually free text, so most hours come from OpenStreetMap instead: one Overpass API query per page fetches every feature with `opening_hours` in the page's bounding box. A listing matches a feature by Wikidata ID first, then by name within 200 m. Follow Overpass usage limits: one query at a time, with a descriptive User-Agent. If neither source has hours, store `null`.
 - The classifier labels each attraction `indoor`, `outdoor`, or `mixed` from its section and keywords.
-- Visit lengths: ask the OpenRouter model once per attraction for the typical visit length that visitors report, given its name, city, and description. Clamp the answer to 20 to 240 minutes. If the model fails or gives no number, use a category default (museum 120, park 90, viewpoint 30, other 60). Store which source was used.
+- Visit lengths: ask the OpenRouter model for the typical visit length that visitors report, 60 attractions per request, given each one's name, city, and description. Batching keeps the run under the free tier's daily request limit. Clamp answers to 20 to 240 minutes. If the model fails or skips an attraction, use a category default from `scripts/scrape/classify.ts` (for example museum 120, park 90, viewpoint 30, other 60). Store which source was used. Restaurants get 60 minutes.
 - All scraped fields are stored, so none of these steps run again at runtime.
 
 ## Firestore collections
 
-- `destinations`: one document per city, with its center point and UTC offset.
+- `destinations`: one document per city, with its center point. The UTC offset comes from each OpenWeatherMap response, because it changes with daylight saving time.
 - `places`: one document per attraction or restaurant. Each stores a `geohash` field computed with `geofire-common`, and nearby queries range over that field.
 - `trips`: saved itineraries and the preferences used to build them.
 
@@ -211,7 +213,7 @@ The server authenticates with a Firebase service account. Its credentials live o
 |---|---|---|---|
 | 1 | Scaffold | Next.js app, dependencies, lint rules. Done. | Nothing |
 | 2 | Planning logic | Weather scoring, opening hours, meals, travel modes, and route ordering work and are tested with sample data. Done. | Nothing |
-| 3 | Data | 1,000+ attractions plus restaurants from 60 to 80 cities in Firestore, with hours, indoor/outdoor labels, and visit lengths. | Firebase, OpenRouter |
+| 3 | Data | 1,000+ attractions plus restaurants in Firestore, with hours, indoor/outdoor labels, and visit lengths. Scraped into `data/`: 1,877 attractions and 1,016 restaurants in 54 cities. Loading into Firestore waits on the Firebase project. | Firebase |
 | 4 | Live APIs | Real forecasts, travel times, route lines, and hotel geocoding feed the planner. | Working OpenWeatherMap key, OpenRouteService token |
 | 5 | Itinerary page | Trip form, day cards, color-coded map. | Milestones 3 and 4 |
 | 6 | Chat | Messages change preferences and the plan updates. | OpenRouter |

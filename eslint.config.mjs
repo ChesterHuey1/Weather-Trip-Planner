@@ -35,6 +35,8 @@ const eslintConfig = defineConfig([
         "error",
         { object: "React", property: "useEffect", message: USE_EFFECT_MESSAGE },
       ],
+      // Destructuring a field out to drop it is intentional.
+      "@typescript-eslint/no-unused-vars": ["warn", { ignoreRestSiblings: true }],
     },
   },
   {

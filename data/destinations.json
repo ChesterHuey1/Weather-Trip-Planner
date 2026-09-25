@@ -1,0 +1,488 @@
+[
+ {
+  "id": "chicago",
+  "name": "Chicago",
+  "center": [
+   -87.62553616176469,
+   41.88668139705881
+  ],
+  "placeCount": 96
+ },
+ {
+  "id": "san-francisco",
+  "name": "San Francisco",
+  "center": [
+   -122.41157449056598,
+   37.80383183018868
+  ],
+  "placeCount": 84
+ },
+ {
+  "id": "washington-d-c",
+  "name": "Washington, D.C.",
+  "center": [
+   -77.03369193103447,
+   38.888102758620704
+  ],
+  "placeCount": 31
+ },
+ {
+  "id": "boston",
+  "name": "Boston",
+  "center": [
+   -71.05771763888887,
+   42.35671491666666
+  ],
+  "placeCount": 69
+ },
+ {
+  "id": "seattle",
+  "name": "Seattle",
+  "center": [
+   -122.33948621428569,
+   47.609078142857136
+  ],
+  "placeCount": 33
+ },
+ {
+  "id": "new-orleans",
+  "name": "New Orleans",
+  "center": [
+   -90.06391836666667,
+   29.958318400000003
+  ],
+  "placeCount": 64
+ },
+ {
+  "id": "savannah",
+  "name": "Savannah",
+  "center": [
+   -81.08969926829268,
+   32.06909331707317
+  ],
+  "placeCount": 54
+ },
+ {
+  "id": "charleston",
+  "name": "Charleston",
+  "center": [
+   -79.94732022222222,
+   32.78516402777778
+  ],
+  "placeCount": 50
+ },
+ {
+  "id": "asheville",
+  "name": "Asheville",
+  "center": [
+   -82.54268261904761,
+   35.59316557142857
+  ],
+  "placeCount": 21
+ },
+ {
+  "id": "san-diego",
+  "name": "San Diego",
+  "center": [
+   -117.1639166,
+   32.71318925
+  ],
+  "placeCount": 29
+ },
+ {
+  "id": "philadelphia",
+  "name": "Philadelphia",
+  "center": [
+   -75.16016172727274,
+   39.949568090909096
+  ],
+  "placeCount": 18
+ },
+ {
+  "id": "nashville",
+  "name": "Nashville",
+  "center": [
+   -86.78238240816329,
+   36.15139736734694
+  ],
+  "placeCount": 71
+ },
+ {
+  "id": "portland-maine",
+  "name": "Portland, Maine",
+  "center": [
+   -70.26202105000002,
+   43.65814605
+  ],
+  "placeCount": 35
+ },
+ {
+  "id": "denver",
+  "name": "Denver",
+  "center": [
+   -104.98501032075474,
+   39.745013188679245
+  ],
+  "placeCount": 86
+ },
+ {
+  "id": "salt-lake-city",
+  "name": "Salt Lake City",
+  "center": [
+   -111.889362106383,
+   40.736849659574474
+  ],
+  "placeCount": 134
+ },
+ {
+  "id": "pittsburgh",
+  "name": "Pittsburgh",
+  "center": [
+   -79.99994483333333,
+   40.441199
+  ],
+  "placeCount": 39
+ },
+ {
+  "id": "vancouver",
+  "name": "Vancouver",
+  "center": [
+   -123.11740143750004,
+   49.28177943749999
+  ],
+  "placeCount": 33
+ },
+ {
+  "id": "montreal",
+  "name": "Montreal",
+  "center": [
+   -73.55350292857143,
+   45.50605664285715
+  ],
+  "placeCount": 25
+ },
+ {
+  "id": "quebec-city",
+  "name": "Quebec City",
+  "center": [
+   -71.2101169,
+   46.811275275
+  ],
+  "placeCount": 72
+ },
+ {
+  "id": "toronto",
+  "name": "Toronto",
+  "center": [
+   -79.38598523999998,
+   43.64532896000001
+  ],
+  "placeCount": 35
+ },
+ {
+  "id": "oaxaca",
+  "name": "Oaxaca",
+  "center": [
+   -96.70156708695654,
+   17.063933739130434
+  ],
+  "placeCount": 45
+ },
+ {
+  "id": "london",
+  "name": "London",
+  "center": [
+   -0.11102976829268296,
+   51.50855152439024
+  ],
+  "placeCount": 110
+ },
+ {
+  "id": "paris",
+  "name": "Paris",
+  "center": [
+   2.327551615384616,
+   48.86078930769229
+  ],
+  "placeCount": 37
+ },
+ {
+  "id": "barcelona",
+  "name": "Barcelona",
+  "center": [
+   2.177664428571429,
+   41.38218447619047
+  ],
+  "placeCount": 71
+ },
+ {
+  "id": "porto",
+  "name": "Porto",
+  "center": [
+   -8.62513240909091,
+   41.150088545454544
+  ],
+  "placeCount": 43
+ },
+ {
+  "id": "seville",
+  "name": "Seville",
+  "center": [
+   -5.991294119999999,
+   37.38507532
+  ],
+  "placeCount": 35
+ },
+ {
+  "id": "granada",
+  "name": "Granada",
+  "center": [
+   -3.5946535869565204,
+   37.177541456521745
+  ],
+  "placeCount": 52
+ },
+ {
+  "id": "florence",
+  "name": "Florence",
+  "center": [
+   11.256287437499997,
+   43.77100934374999
+  ],
+  "placeCount": 46
+ },
+ {
+  "id": "bologna",
+  "name": "Bologna",
+  "center": [
+   11.341241854838707,
+   44.49287856451614
+  ],
+  "placeCount": 102
+ },
+ {
+  "id": "berlin",
+  "name": "Berlin",
+  "center": [
+   13.386518382978727,
+   52.51738461702127
+  ],
+  "placeCount": 138
+ },
+ {
+  "id": "vienna",
+  "name": "Vienna",
+  "center": [
+   16.368238202702706,
+   48.20753168918919
+  ],
+  "placeCount": 113
+ },
+ {
+  "id": "prague",
+  "name": "Prague",
+  "center": [
+   14.420574030303031,
+   50.088212606060615
+  ],
+  "placeCount": 56
+ },
+ {
+  "id": "krakow",
+  "name": "Kraków",
+  "center": [
+   19.93671742857143,
+   50.05663185714286
+  ],
+  "placeCount": 7
+ },
+ {
+  "id": "copenhagen",
+  "name": "Copenhagen",
+  "center": [
+   12.578854787878788,
+   55.6793892121212
+  ],
+  "placeCount": 54
+ },
+ {
+  "id": "stockholm",
+  "name": "Stockholm",
+  "center": [
+   18.069861521739135,
+   59.32508004347826
+  ],
+  "placeCount": 43
+ },
+ {
+  "id": "edinburgh",
+  "name": "Edinburgh",
+  "center": [
+   -3.1877627619047617,
+   55.94769497619049
+  ],
+  "placeCount": 50
+ },
+ {
+  "id": "bruges",
+  "name": "Bruges",
+  "center": [
+   3.22254925,
+   51.205789949999996
+  ],
+  "placeCount": 40
+ },
+ {
+  "id": "istanbul",
+  "name": "Istanbul",
+  "center": [
+   28.959976026315786,
+   41.014750526315794
+  ],
+  "placeCount": 54
+ },
+ {
+  "id": "athens",
+  "name": "Athens",
+  "center": [
+   23.733479261538466,
+   37.98246526153846
+  ],
+  "placeCount": 86
+ },
+ {
+  "id": "dubrovnik",
+  "name": "Dubrovnik",
+  "center": [
+   18.10854082352941,
+   42.641301235294115
+  ],
+  "placeCount": 23
+ },
+ {
+  "id": "tokyo",
+  "name": "Tokyo",
+  "center": [
+   139.74002836363636,
+   35.6969330909091
+  ],
+  "placeCount": 40
+ },
+ {
+  "id": "kyoto",
+  "name": "Kyoto",
+  "center": [
+   135.78377946666666,
+   35.0063679
+  ],
+  "placeCount": 36
+ },
+ {
+  "id": "osaka",
+  "name": "Osaka",
+  "center": [
+   135.502869,
+   34.664039200000005
+  ],
+  "placeCount": 7
+ },
+ {
+  "id": "seoul",
+  "name": "Seoul",
+  "center": [
+   126.98499086274511,
+   37.57898368627451
+  ],
+  "placeCount": 78
+ },
+ {
+  "id": "singapore",
+  "name": "Singapore",
+  "center": [
+   103.86183159999999,
+   1.2829404000000002
+  ],
+  "placeCount": 22
+ },
+ {
+  "id": "hong-kong",
+  "name": "Hong Kong",
+  "center": [
+   114.15251249999997,
+   22.280539538461536
+  ],
+  "placeCount": 31
+ },
+ {
+  "id": "bangkok",
+  "name": "Bangkok",
+  "center": [
+   100.49675176470589,
+   13.753031735294119
+  ],
+  "placeCount": 39
+ },
+ {
+  "id": "hanoi",
+  "name": "Hanoi",
+  "center": [
+   105.83510855882352,
+   21.030551588235298
+  ],
+  "placeCount": 67
+ },
+ {
+  "id": "sydney",
+  "name": "Sydney",
+  "center": [
+   151.2118769259259,
+   -33.86699359259259
+  ],
+  "placeCount": 32
+ },
+ {
+  "id": "melbourne",
+  "name": "Melbourne",
+  "center": [
+   144.96772785714282,
+   -37.81822717142857
+  ],
+  "placeCount": 55
+ },
+ {
+  "id": "marrakech",
+  "name": "Marrakech",
+  "center": [
+   -7.985183300000001,
+   31.62627226666666
+  ],
+  "placeCount": 54
+ },
+ {
+  "id": "buenos-aires",
+  "name": "Buenos Aires",
+  "center": [
+   -58.37834180000001,
+   -34.60622836666666
+  ],
+  "placeCount": 46
+ },
+ {
+  "id": "rio-de-janeiro",
+  "name": "Rio de Janeiro",
+  "center": [
+   -43.18049735714286,
+   -22.908642410714286
+  ],
+  "placeCount": 62
+ },
+ {
+  "id": "cusco",
+  "name": "Cusco",
+  "center": [
+   -71.97545008695651,
+   -13.512096826086955
+  ],
+  "placeCount": 40
+ }
+]
