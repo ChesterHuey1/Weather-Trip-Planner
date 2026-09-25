@@ -19,17 +19,17 @@ A web app that builds day-by-day trip itineraries. It puts outdoor activities in
 - OpenWeatherMap free "5 day / 3 hour forecast" API for weather.
 - OpenRouteService free tier for travel times. Use the matrix endpoint (about 500 requests a day, up to 3,500 origin-destination pairs each) with the `foot-walking`, `cycling-regular`, and `driving-car` profiles. Cache matrices per city and candidate set.
 - `opening_hours` npm package for parsing opening hours in OpenStreetMap format.
-- Claude API, used only to turn user messages into a `Preferences` object.
+- OpenRouter for the language model, used only to turn user messages into a `Preferences` object. The model is set by `OPENROUTER_MODEL` in `.env.local`, so a free model can be used. Do not use the Anthropic Claude API directly.
 - Cheerio for parsing scraped HTML.
 
 ## Architecture
 
-Decision: scoring rules decide indoor vs outdoor. Claude never builds the itinerary. It only parses messages into `Preferences`. This keeps plans deterministic, testable, and explainable.
+Decision: scoring rules decide indoor vs outdoor. The language model never builds the itinerary. It only parses messages into `Preferences`. This keeps plans deterministic, testable, and explainable.
 
 ```
 scripts/scrape/     one-time scraper: fetch, parse (Cheerio), classify, load
 src/domain/         pure logic, no network or database calls: types, weatherScore, planItinerary
-src/adapters/       openWeather, openRoute, firestore, claudePreferences
+src/adapters/       openWeather, openRoute, firestore, messagePreferences
 app/                Next.js pages and route handlers
 ```
 
@@ -113,7 +113,7 @@ function planItinerary(input: {
 
 ### Messages
 
-- The user's message goes to `claudePreferences`, which returns an updated `Preferences` object. Validate it with a schema before use.
+- The user's message goes to `messagePreferences`, which returns an updated `Preferences` object. Validate it with a schema before use.
 - The planner then reruns with the new preferences.
 
 ## Scraping policy
@@ -147,4 +147,4 @@ The server authenticates with a Firebase service account. Its credentials live o
 3. Write the scraper and load 1,000+ attractions.
 4. Write the OpenWeatherMap and OpenRouteService adapters.
 5. Build the itinerary page.
-6. Add the message box and `claudePreferences`.
+6. Add the message box and `messagePreferences`.
